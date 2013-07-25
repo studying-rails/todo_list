@@ -1,0 +1,14 @@
+
+<div class="todo_list">
+  <h1>TODO List</h1>
+  <%= form_for TodoItem.new do |f| %>
+    <%= f.text_field :title, required: true, autofocus: true %>
+  <% end %>
+  <table>
+    <% @items.each do |item| %>
+      <tr><td class="title"><%= item.title %>
+          <td class="action"><%= button_to 'Delete', todo_item_path(item), method: :delete  %>
+    <% end %>
+  </table>
+</div>
+
