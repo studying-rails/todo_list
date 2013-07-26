@@ -1,5 +1,5 @@
 TodoList::Application.routes.draw do
-  root to: redirect('/todo_items')
+  root to: 'tasks#index'
 
-  resources :todo_items, only: %w(index create update destroy)
+  resources :tasks, only: %w(index create update destroy)
 end
